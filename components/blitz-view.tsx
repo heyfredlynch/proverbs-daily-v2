@@ -1,38 +1,17 @@
 import { ArrowLeft } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import React from 'react'
 
-interface BlitzViewProps {
-  onBack: () => void
-}
-
-export function BlitzView({ onBack }: BlitzViewProps) {
+export default function BlitzView() {
   return (
-    <div className="flex flex-col gap-4 p-4">
-      <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon" onClick={onBack}>
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-        <h1 className="text-lg">PROVERBS DAILY BLITZ</h1>
+    <div className="p-4 border rounded-lg shadow-sm">
+      <div className="flex items-center gap-2 mb-4">
+        <ArrowLeft className="w-6 h-6" />
+        <button className="px-4 py-2 bg-slate-900 text-white rounded-md">
+          Back
+        </button>
       </div>
-      <Card className="aspect-video bg-gray-900 flex items-center justify-center text-sm">
-        YouTube Video Embed
-      </Card>
-      <Card className="p-4">
-        <h2 className="text-lg font-light mb-2">Today's Verse</h2>
-        <p className="text-base mb-2">
-          The heart knows its own bitterness and joy;
-          he will not share these with a stranger.
-        </p>
-        <p className="text-sm text-gray-400">Proverbs 14:10 (WEB)</p>
-      </Card>
-      <Card className="p-4">
-        <h2 className="text-lg font-light mb-2">Morning Prayer</h2>
-        <p className="text-base">
-          Lord help me develop wisdom through self-observation and Your guidance.
-        </p>
-      </Card>
+      <h2 className="text-2xl font-bold mb-4">Daily Blitz</h2>
+      {/* Add your blitz content here */}
     </div>
   )
 }
-
